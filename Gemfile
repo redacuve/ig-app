@@ -33,6 +33,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap'
 # users authentication
 gem 'devise'
+# File uploading
+gem 'carrierwave', '~> 2.0'
+# cloud services
+gem 'fog', '~> 2.2'
+# image resizing
+gem "mini_magick"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
