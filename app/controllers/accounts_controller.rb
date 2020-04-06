@@ -6,5 +6,4 @@ class AccountsController < ApplicationController
   end
 
   def show; end
-  
 end

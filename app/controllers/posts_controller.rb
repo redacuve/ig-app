@@ -1,29 +1,26 @@
 class PostsController < ApplicationController
-  
   def new
     @post = Post.new
   end
-  
+
   def create
     @post = Post.new(post_params)
     @post.active = true
+    @post.account_id = current_account.id if account_signed_in?
     if @post.save
-      redirect_to dashboard_path, flash: { success: "Post was created sucefully" }
+      redirect_to dashboard_path, flash: { success: 'Post was created sucefully' }
     else
-      redirect_to new_post_path, flash: { success: "Post was not saved" }
+      redirect_to new_post_path, flash: { success: 'Post was not saved' }
     end
   end
 
-  def show
-  
-  end
+  def show; end
 
   private
+
   def post_params
-      params.require(:post).permit(:image, :image_cache)
+    params.require(:post).permit(:image, :image_cache)
   end
 
-  def set_post
-
-  end
+  def set_post; end
 end
